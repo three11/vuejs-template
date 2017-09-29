@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-	entry: './src/bootstrap.js',
+	entry: './src/js/bootstrap.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		publicPath: '/dist/',
@@ -10,18 +10,12 @@ module.exports = {
 	},
 	module: {
 		rules: [
-		{
-			test: /\.vue$/,
-			loader: 'vue-loader',
-			options: {
-				loaders: {
-						// Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-						// the "scss" and "sass" values for the lang attribute to the right configs here.
-						// other preprocessors should work out of the box, no loader config like this nessessary.
-						'scss': 'vue-style-loader!css-loader!sass-loader',
-						'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+			{
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					loaders: {
 					}
-					// other vue-loader options go here
 				}
 			},
 			{
@@ -36,44 +30,51 @@ module.exports = {
 					name: '[name].[ext]?[hash]'
 				}
 			}
-			]
-		},
-		resolve: {
-			alias: {
-				'vue$'      : 'vue/dist/vue.common.js',
-				// 'store'  : path.resolve(__dirname, './src/store.js'),
-				'assets'    : path.resolve('./src/assets'),
-				'components': path.resolve('./src/components'),
-				'pages'     : path.resolve('./src/pages')
-			}
-		},
-		devServer: {
-			historyApiFallback: true,
-			noInfo: true
-		},
-		performance: {
-			hints: false
-		},
-		devtool: '#eval-source-map'
-	}
+		]
+	},
+	resolve: {
+		modules: [
+			'src/js',
+			'src/js/router',
+			'src/js/store',
+			'node_modules'
+		],
+		alias: {
+			'vue$': 'vue/dist/vue.esm.js',
+			'assets': path.resolve('./src/assets')
+		}
+	},
+	devServer: {
+		historyApiFallback: true,
+		noInfo: true
+	},
+	performance: {
+		hints: false
+	},
+	devtool: '#eval-source-map'
+}
 
-	if (process.env.NODE_ENV === 'production') {
-		module.exports.devtool = '#source-map'
-		// http://vue-loader.vuejs.org/en/workflow/production.html
-		module.exports.plugins = (module.exports.plugins || []).concat([
-			new webpack.DefinePlugin({
-				'process.env': {
-					NODE_ENV: '"production"'
-				}
-			}),
-			new webpack.optimize.UglifyJsPlugin({
-				sourceMap: true,
-				compress: {
-					warnings: false
-				}
-			}),
-			new webpack.LoaderOptionsPlugin({
-				minimize: true
-			})
-		])
+if (process.env.NODE_ENV === 'production') {
+	module.exports.devtool = '#source-map'
+
+	module.exports.plugins = (module.exports.plugins || []).concat([
+
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"production"'
+			}
+		}),
+
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false
+			}
+		}),
+
+		new webpack.LoaderOptionsPlugin({
+			minimize: true
+		})
+
+	  ])
 }
