@@ -3,6 +3,7 @@
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { isEmpty } from 'lodash';
 
 /**
  * The internal dependencies.
