@@ -2,7 +2,6 @@
  * The external dependencies
  */
 
-
 /**
  * The internal dependencies
  */
@@ -23,7 +22,7 @@ export const state = {
  *
  * @type {String}
  */
-// export const SOME_ACTION = 'name/action'
+export const SOME_ACTION = 'name/action';
 
 /**
  * The supported actions.
@@ -31,19 +30,15 @@ export const state = {
  * @type {Object}
  */
 
-export const actions = {
+export const actions = {};
 
-};
-
- /**
+/**
  * The mutations of the state.
  *
  * @type {Object}
  */
 
-export const mutations = {
-
-};
+export const mutations = {};
 
 /**
  * Get some information from the state.
@@ -51,6 +46,4 @@ export const mutations = {
  * @type {Object}
  */
 
-export const getters = {
-
-};
+export const getters = {};

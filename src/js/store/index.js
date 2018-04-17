@@ -7,7 +7,7 @@ import Vuex from 'vuex';
 /**
  * The internal dependencies.
  */
-// import modules here
+// import * as example from 'store/modules/example';
 
 /**
  * Install the plugins.
