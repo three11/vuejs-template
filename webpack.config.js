@@ -1,7 +1,8 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+	mode: process.env.NODE_ENV,
 	entry: './src/js/bootstrap.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -14,8 +15,7 @@ module.exports = {
 				test: /\.vue$/,
 				loader: 'vue-loader',
 				options: {
-					loaders: {
-					}
+					loaders: {}
 				}
 			},
 			{
@@ -33,15 +33,10 @@ module.exports = {
 		]
 	},
 	resolve: {
-		modules: [
-			'src/js',
-			'src/js/router',
-			'src/js/store',
-			'node_modules'
-		],
+		modules: ['src/js', 'src/js/router', 'src/js/store', 'node_modules'],
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js',
-			'assets': path.resolve('./src/assets')
+			vue$: 'vue/dist/vue.esm.js',
+			assets: path.resolve('./src/assets')
 		}
 	},
 	devServer: {
@@ -52,13 +47,12 @@ module.exports = {
 		hints: false
 	},
 	devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
-	module.exports.devtool = '#source-map'
+	module.exports.devtool = '#source-map';
 
 	module.exports.plugins = (module.exports.plugins || []).concat([
-
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: '"production"'
@@ -75,6 +69,5 @@ if (process.env.NODE_ENV === 'production') {
 		new webpack.LoaderOptionsPlugin({
 			minimize: true
 		})
-
-	  ])
+	]);
 }
