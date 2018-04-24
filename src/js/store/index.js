@@ -15,7 +15,7 @@ import * as todo from 'store/modules/example';
 Vue.use(Vuex);
 
 /**
- * Setup the store.
+ * Setup the store with modules importing
  */
 export default new Vuex.Store({
 	modules: { todo }

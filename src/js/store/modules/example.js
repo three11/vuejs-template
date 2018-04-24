@@ -11,7 +11,6 @@
  *
  * @type {Object}
  */
-
 export const state = {
 	requesting: false,
 	data: {
@@ -32,7 +31,6 @@ export const REMOVE_TODO = 'todo/delete';
  *
  * @type {Object}
  */
-
 export const actions = {
 	addTodo({ commit }, payload) {
 		commit(ADD_TODO, payload);
@@ -47,7 +45,6 @@ export const actions = {
  *
  * @type {Object}
  */
-
 export const mutations = {
 	[ADD_TODO](state, todo) {
 		state.data.todos.push(todo);
@@ -63,7 +60,6 @@ export const mutations = {
  *
  * @type {Object}
  */
-
 export const getters = {
 	todos: state => {
 		return state.data.todos;
