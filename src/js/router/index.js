@@ -25,6 +25,10 @@ const router = new VueRouter({
 
 /**
  * Attach the middlewares.
+ *
+ * @param  {Object}   to
+ * @param  {Object}   from
+ * @param  {Function} next
  */
 router.beforeEach((to, from, next) => {
 	if (!to.meta.middlewares) {
@@ -55,7 +59,10 @@ router.beforeEach((to, from, next) => {
 });
 
 /**
- * Attach events on router hook.
+ * Set the document title.
+ * @param  {Object} to
+ * @param  {Object} from
+ * @return {Void}
  */
 router.afterEach((to, from) => {
 	document.title = to.meta.title;
