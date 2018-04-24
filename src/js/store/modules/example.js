@@ -14,7 +14,9 @@
 
 export const state = {
 	requesting: false,
-	data: []
+	data: {
+		todos: []
+	}
 };
 
 /**
@@ -22,7 +24,8 @@ export const state = {
  *
  * @type {String}
  */
-export const SOME_ACTION = 'name/action';
+export const ADD_TODO = 'todo/add';
+export const REMOVE_TODO = 'todo/delete';
 
 /**
  * The supported actions.
@@ -30,7 +33,14 @@ export const SOME_ACTION = 'name/action';
  * @type {Object}
  */
 
-export const actions = {};
+export const actions = {
+	addTodo({ commit }, payload) {
+		commit(ADD_TODO, payload);
+	},
+	removeTodo({ commit }, payload) {
+		commit(REMOVE_TODO, payload);
+	}
+};
 
 /**
  * The mutations of the state.
@@ -38,7 +48,15 @@ export const actions = {};
  * @type {Object}
  */
 
-export const mutations = {};
+export const mutations = {
+	[ADD_TODO](state, todo) {
+		state.data.todos.push(todo);
+	},
+
+	[REMOVE_TODO](state, index) {
+		state.data.todos.splice(index, 1);
+	}
+};
 
 /**
  * Get some information from the state.
@@ -46,4 +64,8 @@ export const mutations = {};
  * @type {Object}
  */
 
-export const getters = {};
+export const getters = {
+	todos: state => {
+		return state.data.todos;
+	}
+};
