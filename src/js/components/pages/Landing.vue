@@ -1,6 +1,6 @@
 <template>
 	<div id="example">
-		<h1>Hellow World</h1>
+		<h1>Hello World</h1>
 
 		<ul class="example-todos">
 			<li v-for="(todo, key) in todos">
