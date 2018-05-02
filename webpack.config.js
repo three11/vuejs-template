@@ -47,8 +47,7 @@ const vueConfig = {
 				require('autoprefixer')()
 			]
 		},
-		cssSourceMap: true,
-		extractCSS: true
+		cssSourceMap: true
 	}
 };
 
