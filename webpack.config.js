@@ -1,6 +1,21 @@
-const path = require('path');
+/**
+ * Internal dependencies
+ */
+const { resolve } = require('path');
+
+/**
+ * External dependencies
+ * @type {[type]}
+ */
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+/**
+ * Local variables
+ */
+const mode = process.env.NODE_ENV;
+const isDevelopment = mode === 'development';
 
 /**
  * Configure Babel
@@ -33,40 +48,70 @@ const assetsConfig = {
  */
 const vueConfig = {
 	test: /\.vue$/,
-	loader: 'vue-loader',
-	options: {
-		extractCSS: process.env.NODE_ENV !== 'development',
-		postcss: {
-			plugins: [
-				require('postcss-easy-import'),
-				require('postcss-url')({
-					url: 'rebase'
-				}),
-				require('postcss-utilities'),
-				require('postcss-flexbugs-fixes'),
-				require('autoprefixer')()
-			]
+	loader: 'vue-loader'
+};
+
+/**
+ * Configure styles
+ */
+const styleConfig = {
+	test: /\.s?css$/,
+	use: [
+		!isDevelopment
+			? MiniCssExtractPlugin.loader
+			: {
+					loader: 'vue-style-loader',
+					options: {
+						sourceMap: isDevelopment
+					}
+			  },
+		{
+			loader: 'css-loader',
+			options: {
+				importLoaders: 1,
+				sourceMap: isDevelopment
+			}
 		},
-		cssSourceMap: true
-	}
+		{
+			loader: 'sass-loader',
+			options: {
+				sourceMap: isDevelopment
+			}
+		},
+		{
+			loader: 'postcss-loader',
+			options: {
+				plugins: () => [
+					require('postcss-easy-import'),
+					require('postcss-url')({
+						url: 'rebase'
+					}),
+					require('postcss-utilities'),
+					require('postcss-flexbugs-fixes'),
+					require('autoprefixer')()
+				],
+				sourceMap: isDevelopment
+			}
+		}
+	]
 };
 
 module.exports = {
-	mode: process.env.NODE_ENV,
+	mode,
 	entry: './src/js/bootstrap.js',
 	output: {
-		path: path.resolve(__dirname, './dist'),
-		publicPath: '/dist/',
+		path: resolve(__dirname, './dist'),
+		publicPath: '/',
 		filename: 'dist.js'
 	},
 	module: {
-		rules: [vueConfig, babelConfig, assetsConfig]
+		rules: [vueConfig, babelConfig, assetsConfig, styleConfig]
 	},
 	resolve: {
 		modules: ['src/js', 'src/js/router', 'src/js/store', 'node_modules'],
 		alias: {
 			vue$: 'vue/dist/vue.esm.js',
-			assets: path.resolve('./src/assets')
+			assets: resolve('./src/assets')
 		}
 	},
 	devServer: {
@@ -77,5 +122,13 @@ module.exports = {
 		hints: false
 	},
 	devtool: 'source-map',
-	plugins: [new ExtractTextPlugin('style.css')]
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'style.css'
+		}),
+		new VueLoaderPlugin()
+	],
+	stats: 'errors-only',
+	bail: false,
+	cache: true
 };
