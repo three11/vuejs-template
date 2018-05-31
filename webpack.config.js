@@ -37,7 +37,8 @@ const assetsConfig = {
 		{
 			loader: 'file-loader',
 			options: {
-				name: '[hash].[ext]'
+				name: '[hash].[ext]',
+				publicPath: isDevelopment ? '/dist/' : '/'
 			}
 		}
 	]
@@ -101,7 +102,7 @@ module.exports = {
 	entry: './src/js/bootstrap.js',
 	output: {
 		path: resolve(__dirname, './dist'),
-		publicPath: '/',
+		publicPath: '/dist/',
 		filename: 'dist.js'
 	},
 	module: {
