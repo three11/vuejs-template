@@ -2,7 +2,7 @@
  * The internal dependencies.
  */
 import fetch from 'router/middlewares/fetch';
-import Landing from 'components/pages/Landing.vue';
+import Landing from 'pages/Landing.vue';
 
 export default {
 	/**
