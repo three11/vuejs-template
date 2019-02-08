@@ -33,7 +33,7 @@
     "postcss-url": "7.3.2",
     "postcss-utilities": "0.8.0",
     "sass-loader": "7.1.0",
-    "style-loader": "0.21.0",
+    "style-loader": "0.23.1",
     "vue-loader": "15.2.2",
     "vue-style-loader": "4.1.0",
     "vue-template-compiler": "2.5.16",
