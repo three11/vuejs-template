@@ -28,7 +28,7 @@
     "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.11.0",
     "postcss-easy-import": "3.0.0",
-    "postcss-flexbugs-fixes": "3.3.1",
+    "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "2.1.6",
     "postcss-url": "7.3.2",
     "postcss-utilities": "0.8.0",
