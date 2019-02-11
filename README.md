@@ -1,16 +1,20 @@
-# App
+# VueJS Template
 
-> App boilerplate
+A scalable starter boilerplace for Vue applications including latest Vue, Vuex, Vue Router and more.
 
 ## Build Setup
 
-``` bash
+``` sh
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn start
 
 # build for production with minification
-npm run build
+yarn build
 ```
+
+## More
+
+`// TODO`
