@@ -8,7 +8,7 @@ import store from 'store';
  *
  * @return {Object<Promise>}
  */
-export default function fetch() {
+export default function fetch(to) {
 	return Promise.all(
 		to.meta.actions.map(action => {
 			if (typeof action === 'object') {

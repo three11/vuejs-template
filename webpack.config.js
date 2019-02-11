@@ -1,3 +1,5 @@
+/* eslint no-mixed-spaces-and-tabs: 0 */
+
 /**
  * Internal dependencies
  */
@@ -7,7 +9,6 @@ const { resolve } = require('path');
  * External dependencies
  * @type {[type]}
  */
-const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 

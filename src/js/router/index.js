@@ -50,9 +50,7 @@ router.beforeEach((to, from, next) => {
 	}
 
 	if (!isEmpty(providers)) {
-		Promise.all(providers.map(provider => provider(to, from, next))).then(
-			() => next()
-		);
+		Promise.all(providers.map(provider => provider(to, from, next))).then(() => next());
 	} else {
 		next();
 	}
@@ -64,7 +62,7 @@ router.beforeEach((to, from, next) => {
  * @param  {Object} from
  * @return {Void}
  */
-router.afterEach((to, from) => {
+router.afterEach(to => {
 	document.title = to.meta.title;
 });
 

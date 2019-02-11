@@ -1,18 +1,17 @@
 <template>
-	<div id="example">
-		<h1>Hello World</h1>
+  <div id="example">
+    <h1>Hello World</h1>
 
-		<ul class="example-todos">
-			<li v-for="(todo, key) in todos">
-				{{todo.text}}
+    <ul class="example-todos">
+      <li v-for="(todo, key) in todos" :key="key">
+        {{ todo.text }}
+        <span @click="handleRemove(key)">X</span>
+      </li>
+    </ul>
 
-				<span @click="handleRemove(key)">X</span>
-			</li>
-		</ul>
-
-		<a @click.prevent="handleNewTodo" href="#">Add Todo</a>
-	</div><!-- /#example -->
-
+    <a href="#" @click.prevent="handleNewTodo">Add Todo</a>
+  </div>
+  <!-- /#example -->
 </template>
 
 <script>
@@ -38,3 +37,10 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+body {
+	background-color: red;
+}
+</style>
+

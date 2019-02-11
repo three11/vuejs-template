@@ -50,7 +50,7 @@ export default {
 			 *
 			 * @type {Array}
 			 */
-			providers: []
+			providers: [fetch]
 		},
 
 		/**
