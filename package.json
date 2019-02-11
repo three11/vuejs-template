@@ -38,7 +38,7 @@
 			"role": "Developer"
 		}
 	],
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/three11/vue-template/issues"
 	},
