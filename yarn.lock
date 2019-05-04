@@ -5749,11 +5749,12 @@ postcss-url@8.0.0:
     postcss "^7.0.2"
     xxhashjs "^0.2.1"
 
-postcss-utilities@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/postcss-utilities/-/postcss-utilities-0.8.0.tgz#2378ff421638d68f9e31bc61ab4a8c220b4a7c43"
+postcss-utilities@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/postcss-utilities/-/postcss-utilities-0.8.1.tgz#fc1ede5b6cd3264efcb06008680390bec19c590e"
+  integrity sha512-VksI5cIodWmPaEw2KERrbj9h2m+/9hZSk7pyXzqkwQoBmC/KGC4LWwEEF90AdEe7XMmEmlmjrJQm12mFkg3i4Q==
   dependencies:
-    postcss "^6.0.16"
+    postcss "^7.0.2"
     postcss-value-parser "^3.3.0"
 
 postcss-value-parser@^3.0.0, postcss-value-parser@^3.3.1:
@@ -5764,7 +5765,7 @@ postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.16:
+postcss@^6.0.1, postcss@^6.0.11:
   version "6.0.22"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
   dependencies:
