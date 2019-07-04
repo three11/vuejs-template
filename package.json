@@ -1,98 +1,102 @@
 {
-	"name": "vue-template",
-	"version": "1.0.0",
-	"description": "Scalable starter boilerplate for VueJS applications",
-	"main": "./src/bootstrap.js",
-	"scripts": {
-		"start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-		"build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-		"lint": "npm run lint:js && npm run lint:css",
-		"lint:js": "eslint --ext .js,.vue src",
-		"lint:css": "stylelint '**/*.vue'"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:three11/vue-template.git"
-	},
-	"keywords": [
-		"Vue",
-		"Starter",
-		"Template",
-		"SPA",
-		"JavaScript"
-	],
-	"authors": [
-		{
-			"name": "Three 11 Ltd",
-			"email": "hello@three-11.com",
-			"role": "Developer"
-		},
-		{
-			"name": "Alexander Panayotov",
-			"email": "alexander.panayotov@gmail.com",
-			"role": "Developer"
-		},
-		{
-			"name": "Atanas Atanasov",
-			"email": "scriptex.bg@gmail.com",
-			"role": "Developer"
-		}
-	],
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/three11/vue-template/issues"
-	},
-	"homepage": "https://github.com/three11/vue-template#readme",
-	"dependencies": {
-		"lodash": "4.17.11",
-		"vue": "2.6.10",
-		"vue-router": "3.0.6",
-		"vuex": "3.1.1"
-	},
-	"devDependencies": {
-		"@babel/cli": "7.4.4",
-		"@babel/core": "7.4.5",
-		"@babel/plugin-proposal-class-properties": "7.4.4",
-		"@babel/plugin-proposal-decorators": "7.4.4",
-		"@babel/plugin-proposal-export-namespace-from": "7.2.0",
-		"@babel/plugin-proposal-function-sent": "7.2.0",
-		"@babel/plugin-proposal-json-strings": "7.2.0",
-		"@babel/plugin-proposal-numeric-separator": "7.2.0",
-		"@babel/plugin-proposal-throw-expressions": "7.2.0",
-		"@babel/plugin-syntax-dynamic-import": "7.2.0",
-		"@babel/plugin-syntax-import-meta": "7.2.0",
-		"@babel/preset-env": "7.4.5",
-		"autoprefixer": "9.6.0",
-		"babel-eslint": "10.0.2",
-		"babel-loader": "8.0.6",
-		"cross-env": "5.2.0",
-		"css-loader": "3.0.0",
-		"cssnano": "4.1.10",
-		"eslint": "5.16.0",
-		"eslint-plugin-vue": "5.2.2",
-		"file-loader": "4.0.0",
-		"mini-css-extract-plugin": "0.7.0",
-		"node-sass": "4.12.0",
-		"postcss-easy-import": "3.0.0",
-		"postcss-flexbugs-fixes": "4.1.0",
-		"postcss-loader": "3.0.0",
-		"postcss-url": "8.0.0",
-		"postcss-utilities": "0.8.2",
-		"sass-loader": "7.1.0",
-		"style-loader": "0.23.1",
-		"stylelint": "9.10.1",
-		"stylelint-config-prettier": "5.2.0",
-		"stylelint-config-recommended": "2.2.0",
-		"vue-loader": "15.7.0",
-		"vue-style-loader": "4.1.2",
-		"vue-template-compiler": "2.6.10",
-		"webpack": "4.35.2",
-		"webpack-cli": "3.3.5",
-		"webpack-dev-server": "3.7.2"
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
-	],
-	"private": true
+  "name": "vue-template",
+  "version": "1.0.0",
+  "description": "Scalable starter boilerplate for VueJS applications",
+  "main": "./src/bootstrap.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --ext .js,.vue src",
+    "lint:css": "stylelint '**/*.vue'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:three11/vue-template.git"
+  },
+  "keywords": [
+    "Vue",
+    "Starter",
+    "Template",
+    "SPA",
+    "JavaScript"
+  ],
+  "authors": [
+    {
+      "name": "Three 11 Ltd",
+      "email": "hello@three-11.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Alexander Panayotov",
+      "email": "alexander.panayotov@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Atanas Atanasov",
+      "email": "scriptex.bg@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/three11/vue-template/issues"
+  },
+  "homepage": "https://github.com/three11/vue-template#readme",
+  "dependencies": {
+    "lodash": "4.17.11",
+    "vue": "2.6.10",
+    "vue-router": "3.0.6",
+    "vuex": "3.1.1",
+    "snyk": "^1.189.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-proposal-decorators": "7.4.4",
+    "@babel/plugin-proposal-export-namespace-from": "7.2.0",
+    "@babel/plugin-proposal-function-sent": "7.2.0",
+    "@babel/plugin-proposal-json-strings": "7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/plugin-syntax-import-meta": "7.2.0",
+    "@babel/preset-env": "7.4.5",
+    "autoprefixer": "9.6.0",
+    "babel-eslint": "10.0.2",
+    "babel-loader": "8.0.6",
+    "cross-env": "5.2.0",
+    "css-loader": "3.0.0",
+    "cssnano": "4.1.10",
+    "eslint": "5.16.0",
+    "eslint-plugin-vue": "5.2.2",
+    "file-loader": "4.0.0",
+    "mini-css-extract-plugin": "0.7.0",
+    "node-sass": "4.12.0",
+    "postcss-easy-import": "3.0.0",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-url": "8.0.0",
+    "postcss-utilities": "0.8.2",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "stylelint": "9.10.1",
+    "stylelint-config-prettier": "5.2.0",
+    "stylelint-config-recommended": "2.2.0",
+    "vue-loader": "15.7.0",
+    "vue-style-loader": "4.1.2",
+    "vue-template-compiler": "2.6.10",
+    "webpack": "4.35.2",
+    "webpack-cli": "3.3.5",
+    "webpack-dev-server": "3.7.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "private": true,
+  "snyk": true
 }
