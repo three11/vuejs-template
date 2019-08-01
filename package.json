@@ -80,7 +80,7 @@
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "postcss-url": "8.0.0",
-    "postcss-utilities": "0.8.2",
+    "postcss-utilities": "0.8.4",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "stylelint": "10.1.0",
