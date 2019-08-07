@@ -82,7 +82,7 @@
     "postcss-url": "8.0.0",
     "postcss-utilities": "0.8.4",
     "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
+    "style-loader": "1.0.0",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
     "stylelint-config-recommended": "2.2.0",
