@@ -83,7 +83,7 @@
     "postcss-utilities": "0.8.4",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
-    "stylelint": "10.1.0",
+    "stylelint": "11.0.0",
     "stylelint-config-prettier": "5.2.0",
     "stylelint-config-recommended": "2.2.0",
     "vue-loader": "15.7.1",
