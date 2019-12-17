@@ -74,7 +74,7 @@
     "eslint": "6.7.2",
     "eslint-plugin-vue": "6.0.1",
     "file-loader": "5.0.2",
-    "mini-css-extract-plugin": "0.8.0",
+    "mini-css-extract-plugin": "0.8.2",
     "node-sass": "4.13.0",
     "postcss-easy-import": "3.0.0",
     "postcss-flexbugs-fixes": "4.1.0",
