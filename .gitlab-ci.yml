@@ -1,10 +1,10 @@
-image: node:12.16.1
+image: node:lts
 before_script:
-    - npm install
+    - yarn
 cache:
     paths:
         - node_modules/
 build:
     script:
-        - npm run build
-        - npm run lint
+        - yarn build
+        - yarn lint
